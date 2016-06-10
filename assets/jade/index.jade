@@ -1,0 +1,198 @@
+extends _layout
+include templates/_global_mixins
+include templates/_global_vars
+include templates/_project_mixins
+include templates/_project_vars
+block vars
+	- var array = {body_class:'', layuot_mod:'', sub_keywords:'',title_inner:'Discovery'}
+block content_block
+	main.main
+		.content
+			section.section.place
+				figure.place_image
+					img.img(src='i/places/berlin.jpg')
+					figcaption.place_caption
+						h2.section_title Берлин
+						.section_desc
+							p Духовные ценности и менталитет европейцев
+				.place_desc
+					p Состав воды в Кулундинском озере приближён к океанической воде. Так что купаясь в этом озере, вы осуществляете самую настоящую талассотерапию — лечение купанием в морской воде, когда организм сам, естественным образом, берет из воды недостающие ему минералы и микроэлементы и даже биологически активные вещества. Так что купаясь в этом озере, вы осуществляете. самую/настоящую
+					p Состав воды в Кулундинском озере приближён к океанической воде. Так что купаясь в этом озере, вы осуществляете самую настоящую талассотерапию — лечение купанием в морской воде, когда организм сам, естественным образом, берет из воды недостающие ему минералы и микроэлементы и даже биологически активные вещества. Так что купаясь в этом озере, вы осуществляете. самую/настоящую
+					p Состав воды в Кулундинском озере приближён к океанической воде. Так что купаясь в этом озере, вы осуществляете самую настоящую талассотерапию — лечение купанием в морской воде, когда организм сам, естественным образом, берет из воды недостающие ему минералы и микроэлементы и даже биологически активные вещества. Так что купаясь в этом озере, вы осуществляете. самую/настоящую
+					p Состав воды в Кулундинском озере приближён к океанической воде. Так что купаясь в этом озере, вы осуществляете самую настоящую талассотерапию — лечение купанием в морской воде, когда организм сам, естественным образом.
+					a.more_btn(href='#') Читать полностью
+
+				+place_menu([
+					{name: 'flag'},
+					{name: 'star', events: [
+						{event: 'event 1', url: '#'},
+						{event: 'event 2', url: '#'}
+					]},
+					{name: 'eye', events: [
+						{event: 'event 1', url: '#'}
+					]},
+					{name: 'food', events: [
+						{event: 'event 1', url: '#'},
+						{event: 'event 2', url: '#'},
+						{event: 'event 3', url: '#'}
+					]},
+					{name: 'photo'},
+					{name: 'map'},
+				])
+
+				.place_info_wrap
+					.place_info
+						h4.info_title Достопримечательности:
+						+link_list(['Архитектура(23)', 'Религиозное место(88)', 'Памятник(11)', 'Достопримечательности(22)', 'Замок/крепость(10)'], 'info')
+					.place_info
+						h4.info_title Развлечения:
+						+link_list(['Архитектура(23)', 'Религиозное место(88)', 'Памятник(11)', 'Достопримечательности(22)', 'Замок/крепость(10)', 'Музей(32)', 'Архитектура(23)', 'Религиозное место(88)', 'Памятник(11)', 'Достопримечательности(22)'], 'info')
+					.place_info
+						h4.info_title Отели:
+						+link_list(['Архитектура(23)', 'Религиозное место(88)', 'Памятник(11)', 'Достопримечательности(22)', 'Замок/крепость(10)', 'Музей(32)','Архитектура(23)', 'Религиозное место(88)', 'Памятник(11)', 'Достопримечательности(22)', 'Замок/крепость(10)', 'Музей(32)','Архитектура(23)', 'Религиозное место(88)', 'Памятник(11)', 'Достопримечательности(22)', 'Замок/крепость(10)', 'Музей(32)', 'Архитектура(23)', 'Религиозное место(88)', 'Памятник(11)', 'Достопримечательности(22)'], 'info')
+					.place_info
+						h4.info_title Рестораны и кафе:
+						+link_list(['Архитектура(23)', 'Религиозное место(88)', 'Памятник(11)', 'Достопримечательности(22)', 'Замок/крепость(10)'], 'info')
+			//------------------------------------------------ ##content
+
+			section.section.recent
+				h2.section_title: <strong>Последнее</strong> добавленное (всего 32)
+				+loop_while(8)
+					article.post
+						.post_date
+							span.post_d_day 28
+							span.post_d_month Ноября
+							span.post_d_year 2014
+						h2.post_title Красота Алтая в сентябре
+						.post_tags Место:
+							ul.tags_list
+								li.tags_item
+									a.tags_link(href='#') Россия
+								li.tags_item
+									a.tags_link(href='#') Алтай
+								li.tags_item
+									a.tags_link(href='#') Белокуриха
+						.post_author
+							figure.author_avatar
+								img.img(src='i/avatar.jpg')
+								figcaption.author_name
+									span.firstname Иннокентий
+									span.lastname Смактуновский
+						.post_desc
+							p Непридуманные истории настоящих путешественников, кадры, не требующие пояснений, места, которые необходимо посетить...
+						.post_stats
+							a.post_link.like_mod(href='#') 27
+							a.post_link.view_mod(href='#') 27
+							a.post_link.more_btn(href='#') Читать далее
+			//------------------------------------------------ ##recent
+
+			aside.sidebar
+				.sidebar_section
+					.map map place here
+				.sidebar_section
+					h3.sidebar_title.weather_mod Погода в Берлине
+					.widget widget place here
+				.sidebar_section
+					h3.sidebar_title.air_mod Аэропорты
+					.widget widget place here
+				.sidebar_section
+					h3.sidebar_title.get_mod Как добраться
+					ul.get_list
+						li.get_item
+							a.get_link.air_mod(href='#') Из Москвы
+						li.get_item
+							a.get_link.train_mod(href='#') Москва-Рим
+						li.get_item
+							a.get_link.train_mod(href='#') Экспресс Leonardo Express до вокзала Termini
+						li.get_item
+							a.get_link.train_mod(href='#') Скоростной поезд Frecciarossa до вокзала Неаполь
+						li.get_item
+							a.get_link.bus_mod(href='#') Наземный транспорт
+						li.get_item
+							a.get_link.ship_mod(href='#') Паром до о. Искья
+			//------------------------------------------------ ##sidebar
+
+		section.section
+			h2.section_title Стоит посетить
+			.objects
+				+loop_while(5)
+					.obj_wrap
+						.obj_image
+							img.img(src='i/places/berlin2.jpg')
+						.obj_info
+							h3.obj_title Архитектура
+							+link_list([
+								'Музей Пикассо',
+								'Ратуша Малаги',
+								'Собор святого семейства',
+								'Капитолий'
+							], 'obj')
+							a.more_btn.dark_mod(href='#') Смотреть еще
+				.share
+					.section_title.share_mod
+						span.title_sub Хотите поделиться чем то интересным?
+						span.title_sub У вас есть интересные фотографии с улиц Берлина. Поделитесь этим со всем миром!
+					a.share_btn(href='#') Рассказать всем
+		//------------------------------------------------ ##objects
+
+		.content
+			section.section.preview
+				h2.section_title Острова мира
+				.section_desc
+					p Выступления юных артистов стали ярким сплетением национальных традиций народов
+			//------------------------------------------------ ##preview
+
+			section.section.events
+				h2.section_title События и праздники
+				.events_wrap
+					+loop_while(8)
+						.event
+							.event_image
+								img.img(src='i/places/event.jpg')
+							h3.event_title Октоберфест
+							ul.event_list
+								li.event_item.date_mod 3 окт-2 ноя, ежегодно
+								li.event_item.place_mod Германия / Берлин
+			//------------------------------------------------ ##events
+
+		aside.sidebar
+			.sidebar_section
+				h3.sidebar_title.gift_mod Что привезти?
+				+link_list(['Сувенир 1', 'Сувенир 2', 'Сувенир 3'], 'gifts')
+			.sidebar_section
+				h3.sidebar_title.todo_mod Список дел
+				+link_list(['Посетить Кельнский собор', 'Покататься Чертовом колесе', 'Посетить Бранденбургские ворота'], 'todo')
+			.sidebar_section
+				h3.sidebar_title.todo_mod Последние твиты
+				article.post
+					.post_author
+						figure.author_avatar
+							img.img(src='i/avatar.jpg')
+							figcaption.author_name.twitt_mod
+								span.firstname Иван
+								span.lastname Иванов
+								a.nickname(href='#') @vani_vi
+					.post_text
+						p Непридуманные истории настоящих путешественников, кадры, не требующие пояснений,	места, которые необходимо посетить, маршруты.
+				a.twitter_subscribe(href='#') Подписаться
+		//------------------------------------------------ ##sidebar
+
+		section.section.stories
+			h2.section_title Истории посетителей
+			+loop_while(3)
+				article.post.story_mod
+					h2.post_title Как я встретил Пикассо в самом центре Парижа
+					.post_desc
+						p Непридуманные истории настоящих путешественников, кадры, не требующие пояснений, места, которые необходимо посетить. Непридуманные истории настоящих путешественников, кадры, не требующие пояснений, места, которые необходимо посетить.
+					a.post_link.more_btn.dark_mod(href='#') Читать далее
+
+					.post_author
+						figure.author_avatar
+							img.img(src='i/avatar.jpg')
+							figcaption.author_name
+								span.firstname Иннокентий
+								span.lastname Смактуновский
+						.post_stats
+							a.post_link.like_mod(href='#') 27
+							a.post_link.view_mod(href='#') 27
+		//------------------------------------------------ ##stories

@@ -1,0 +1,73 @@
+mixin header
+	header.header
+		.header_wrap
+			.header_top
+				form.form_subscribe#form_subscribe
+					+form_element({
+						type: 'email',
+						class_array: default_field,
+						title: '',
+						id: 'subscribe_email',
+						placeholder: 'Ваш e-mail'
+					})
+						button.subscribe_btn(type='submit' form='form_subscribe') Подписаться
+				.socials
+					p.socials_desc Быстрый вход / регистрация (кликните на вашу соцсеть)
+					+social(socials, '')
+
+			.header_middle
+				.logo_wrap
+					h1.logo
+						a.logo_link(href='#')
+							img.img(src='i/logo.png' alt='Discovery logo')
+				+main_menu(headerMenuArray)
+
+			.header_bottom
+				.breadcrumbs
+					p.breadcrumbs_text Вы сейчас здесь:
+					//-+breadcrumbs()
+
+				form.form_search#form_search
+					+form_element({
+						type: 'text',
+						class_array: default_field,
+						title: '',
+						id: 'place',
+						placeholder: 'Страна, город, место, а может идея?'
+					})
+					+form_element({
+						type: 'text',
+						class_array: default_field,
+						title: 'Я хочу',
+						id: 'action',
+						placeholder: 'валяться на пляже и наблюдать за стройными австралийками'
+					})
+					button.search_btn(type='submit' form='form_search') Да!
+					a.more_btn(href='#') Еще
+
+
+mixin footer
+	footer.footer
+		.footer_top
+			.logo_wrap
+				.logo
+					a.logo_link(href='#')
+						img.img(src='i/logo.png' alt='Discovery logo')
+			+main_menu(footerMenuArray)
+
+		.footer_bottom
+			.copyrights &copy; 2014 Издательский дом Discovery-Russia. Все права защищены.
+			.socials.footer_mod
+				p.socials_desc Мы в социальных сетях:
+				+social(socials, '')
+
+//------------------------------------------------
+mixin place_menu(array)
+	ul.place_menu
+		each item in array
+			li.place_m_item(class='#{item.mod}')= item.name
+				if item.events
+					ul.events_list
+						each e in item.events
+							li.event_item
+								a.event_link(href= e.url)= e.event
