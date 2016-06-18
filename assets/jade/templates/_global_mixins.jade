@@ -102,16 +102,21 @@ mixin main_menu(menuArray)
 		each item in menuArray.items
 			if item.active
 				li.main_menu_item.active_mod(class="#{menuArray.mod}")
-					a.main_menu_link(href="#" class="#{menuArray.mod}") #{item.title}
+					a.main_menu_link(href="#" class="#{menuArray.mod}")
+						+icon(item.mod, 'menu_icon_mod')
+						span.menu_link_text= item.title
 			else
 				li.main_menu_item(class="#{menuArray.mod}")
-					a.main_menu_link(href="#" class="#{menuArray.mod}") #{item.title}
-
+					a.main_menu_link(href="#" class="#{menuArray.mod}")
+						+icon(item.mod, 'menu_icon_mod')
+						span.menu_link_text= item.title
 mixin social(items,mod)
 	ul.social_list(class="#{mod}")
 		each item in items
 			li.social_item(class="#{mod}")
-				a.social_link(href="#" class="#{item}_mod #{mod}") #{item}
+				a.social_link(href="#" class="#{item}_mod #{mod}")
+					//-#{item}
+					+icon(item, 'soc_mod')
 
 mixin icon(name,mod)
 	- mod = mod || ''

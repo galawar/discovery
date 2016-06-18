@@ -1,0 +1,12 @@
+node_modules/
+/node_modules
+.idea/
+build/
+/helpers
+/plugins
+.bashrc
+.editorconfig
+.gitignore
+.stylelintrc
+*.js
+*.json

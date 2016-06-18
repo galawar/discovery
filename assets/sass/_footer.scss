@@ -5,4 +5,18 @@
 	left: 0;
 	right: 0;
 	will-change: transform;
+	background: $gray1;
+}
+
+.footer_top {
+	height: 14.2rem;
+	padding: 0 0 0 2rem;
+	@extend %global_flex_block_row_nowrap_flex-start_center;
+}
+
+.footer_bottom {
+	color: $white;
+	padding: 0 0 0 2rem;
+	background: darken($gray1, 10%);
+	@extend %global_flex_block_row_nowrap_space_between_center;
 }

@@ -12,9 +12,9 @@ body {
 	-webkit-text-size-adjust: none;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	//background-image: url(/i/bg.jpg);
-	//background-position: center;
-	//background-size: cover;
+	background-image: url(/i/bg.jpg);
+	background-size: cover;
+	overflow-x: hidden;
 }
 
 .wrapper {
@@ -28,7 +28,13 @@ body {
 
 .base {
 	position: relative;
-	padding: $height_header 0 $height_footer;
+	padding: 0 0 $height_footer 0;
+}
+
+.main {
+	width: 100%;
+	@extend %global_flex_block_row_wrap_flex-start;
+	background: $white;
 }
 
 a {
@@ -38,6 +44,12 @@ a {
 	&:focus {
 		text-decoration: underline;
 	}
+}
+
+.img {
+	display: block;
+	width: 100%;
+	height: auto;
 }
 
 .elements_list {
