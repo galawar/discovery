@@ -6,10 +6,12 @@ mixin header
 					+form_element({
 						type: 'email',
 						class_array: default_field,
+						add_class: 'mail_mod',
 						title: '',
 						id: 'subscribe_email',
 						placeholder: 'Ваш e-mail'
 					})
+						+icon('mail')
 						button.subscribe_btn(type='submit' form='form_subscribe') Подписаться
 				.socials
 					p.socials_desc Быстрый вход / регистрация (кликните на вашу соцсеть)
@@ -19,8 +21,8 @@ mixin header
 				.logo_wrap
 					h1.logo
 						a.logo_link(href='#')
-							img.img(src='i/logo.png' alt='Discovery logo')
-				+main_menu(headerMenuArray)
+							img(src='i/logo.png' alt='Discovery logo')
+				+main_menu(MenuArray)
 
 			.header_bottom
 				.breadcrumbs
@@ -43,7 +45,7 @@ mixin header
 						placeholder: 'валяться на пляже и наблюдать за стройными австралийками'
 					})
 					button.search_btn(type='submit' form='form_search') Да!
-					a.more_btn(href='#') Еще
+					a.search_btn.more_mod(href='#') Еще
 
 
 mixin footer
@@ -52,8 +54,8 @@ mixin footer
 			.logo_wrap
 				.logo
 					a.logo_link(href='#')
-						img.img(src='i/logo.png' alt='Discovery logo')
-			+main_menu(footerMenuArray)
+						img(src='i/logo.png' alt='Discovery logo')
+			+main_menu(MenuArray)
 
 		.footer_bottom
 			.copyrights &copy; 2014 Издательский дом Discovery-Russia. Все права защищены.
@@ -65,9 +67,10 @@ mixin footer
 mixin place_menu(array)
 	ul.place_menu
 		each item in array
-			li.place_m_item(class='#{item.mod}')= item.name
+			li.place_m_item
+				+icon(item.name, 'menu_mod')
 				if item.events
 					ul.events_list
 						each e in item.events
-							li.event_item
-								a.event_link(href= e.url)= e.event
+							li.events_item
+								a.events_link(href= e.url)= e.event

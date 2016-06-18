@@ -14,6 +14,8 @@ $(document).ready(function ($) {
 	//developer funcitons
 	pageWidget(['index']);
 	getAllClasses('html','.elements_list');
+
+	svg4everybody({});
 });
 
 $(window).on('load', function () {
