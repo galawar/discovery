@@ -110,6 +110,7 @@ mixin main_menu(menuArray)
 					a.main_menu_link(href="#" class="#{menuArray.mod}")
 						+icon(item.mod, 'menu_icon_mod')
 						span.menu_link_text= item.title
+
 mixin social(items,mod)
 	ul.social_list(class="#{mod}")
 		each item in items

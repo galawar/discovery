@@ -37,6 +37,20 @@
 	&.form_cell_v1_mod {
 		@extend %global_flex_block_row_nowrap_flex-start;
 	}
+
+	&.form_cell_v2_mod {
+		@extend %global_flex_block_row_nowrap_flex-start_center;
+		width: 34rem;
+		height: 7.2rem;
+		border-right: 1px solid rgba($gray3, 0.3);
+	}
+
+	&.form_cell_v3_mod {
+		@extend %global_flex_block_row_nowrap_flex-start_center;
+		width: 48rem;
+		height: 7.2rem;
+		border-right: 1px solid rgba($gray3, 0.3);
+	}
 }
 
 .form_cell_title {
@@ -44,7 +58,11 @@
 	&.hline_hide_mod {
 		display: none;
 	}
-	&.form_v1_mod {
+	&.form_v3_mod {
+		width: 13rem;
+		text-align: right;
+		font-size: 1.4rem;
+		font-weight: 700;
 	}
 }
 
@@ -53,6 +71,16 @@
 
 	&.form_v1_mod {
 		@extend %global_flex_block_row_nowrap_flex-start;
+	}
+
+	&.form_v2_mod {
+		width: 100%;
+		padding: 0 3rem 0 7rem;
+	}
+
+	&.form_v3_mod {
+		width: 100%;
+		padding: 0 1.2rem;
 	}
 }
 
@@ -71,16 +99,84 @@
 		&.textarea_mod_1 {
 		}
 	}
+
 	&.mail_mod {
 		padding-left: 5.5rem;
+	}
+
+	&.v2_mod {
+		@extend %form_field_default !optional;
+		height: 2.5rem;
+		color: $white;
+		background: none;
+		padding: 0;
+		border-bottom: 1px dotted $gray3;
+		&::placeholder {
+			color: $white;
+			font-weight: 700;
+		}
+
+		&:focus {
+			@extend %form_field_default_active !optional;
+			border-bottom: 1px dotted $gray3;
+		}
+
+		&:hover {
+			@extend %form_field_default_hover !optional;
+		}
+	}
+
+	&.v3_mod {
+		@extend %form_field_default !optional;
+		height: 2.5rem;
+		color: $white;
+		background: none;
+		padding: 0;
+		border-bottom: 1px dotted $gray3;
+		&::placeholder {
+			color: $white;
+		}
+
+		&:focus {
+			@extend %form_field_default_active !optional;
+			border-bottom: 1px dotted $gray3;
+		}
+
+		&:hover {
+			@extend %form_field_default_hover !optional;
+		}
 	}
 }
 
 //-------------------------------------------------------inputs and selects###
 
 .form_search {
-	padding: 0 0 0 3rem;
 	@extend %global_flex_block_row_nowrap_flex-start_center;
+}
+
+.search_wrap {
+	position: relative;
+}
+
+.search_i_wrap {
+	position: absolute;
+	left: -9rem;
+	top: 50%;
+	transform: translate(0%, -50%);
+	width: 4.3rem;
+	height: 4.3rem;
+	margin: 0 1rem 0 0;
+	overflow: hidden;
+	border-radius: 50%;
+	background: radial-gradient(circle, transparent 0px, transparent 2rem, white 2.2rem, white 2.3rem);
+
+	.search_i {
+		display: block;
+		width: 3.3rem;
+		height: 3.3rem;
+		margin: 0.5rem;
+		@extend %round_image;
+	}
 }
 
 .search_btn {
@@ -111,6 +207,20 @@
 		transform: translateY(-50%);
 		content: '';
 		@include triangle(left, $color_link_base, 0.5rem);
+	}
+
+	&.twitt_mod {
+		width: 100%;
+		height: 7.3rem;
+		line-height: 7.3rem;
+		text-align: center;
+		letter-spacing: 2px;
+		font-size: $font_size_base;
+		font-weight: normal;
+
+		&:before {
+			display: none;
+		}
 	}
 }
 

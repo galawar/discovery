@@ -59,7 +59,16 @@
 	}
 	&.stories_mod {
 		background: lighten($gray3, 5%);
-
+	}
+	&.sidebar_mod {
+		padding: 4rem 4.8rem;
+		border-bottom: 1px solid $gray3;
+		background: $white;
+	}
+	&.dark_mod {
+		color: $white;
+		background: $gray1;
+		border-color: rgba($gray3, 0.2);
 	}
 }
 
@@ -71,14 +80,58 @@
 .sidebar {
 	width: 35%;
 	align-self: stretch;
-	box-shadow: inset 0 0 0 1px $gray3;
+	border-left: 1px solid $gray3;
 	@extend %global_flex_block_column_nowrap_flex-start;
+}
+
+.sidebar_section {
+	align-self: stretch;
+	border-bottom: 1px solid $gray3;
+	background: #fafafa;
+	
+	&.dark_mod {
+		color: $white;
+		background: $gray1;
+	}
+}
+
+.map {
+	height: 43rem;
 }
 
 .icon {
 	&.menu_mod {
 		color: darken($gray3, 10%);
 		font-size: 2.5rem;
+	}
+	&.search_mod {
+		position: absolute;
+		top: 50%;
+		left: 3rem;
+		transform: translate(0, -50%);
+		font-size: 2.5rem;
+	}
+	&.sidebar_mod {
+		position: absolute;
+		top: 50%;
+		left: 1.5rem;
+		transform: translate(0%, -50%);
+		font-size: 2.2rem;
+	}
+	&.get_mod {
+		position: absolute;
+		top: 0.7rem;
+		left: 0;
+		fill: none;
+		stroke: $black;
+		stroke-width: 1px;
+	}
+	&.stat_mod {
+		position: absolute;
+		top: 50%;
+		left: 0.5rem;
+		transform: translate(0, -50%);
+		font-size: 1.4rem;
 	}
 }
 
@@ -90,6 +143,36 @@
 
 	.breadcrumbs_text {
 		font-style: italic;
+	}
+}
+
+.breadcrumbs_list {
+	@extend %global_flex_block_row_nowrap_flex-start;
+	margin: 0 0 0 2.5rem;
+
+	.breadcrumbs_item {
+		&:not(:first-of-type) {
+			margin: 0 0 0 3rem;
+		}
+	}
+
+	.breadcrumbs_link {
+		position: relative;
+		color: $white;
+		padding: 0.2rem 0;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		border-bottom: 1px dotted $white;
+
+		&:hover,
+		&:active {
+			text-decoration: none;
+		}
+
+		&.current_mod {
+			color: $yellow;
+			border: none;
+		}
 	}
 }
 
@@ -135,6 +218,7 @@
 		@extend %o-btn_2;
 		@extend %btn_size_5;
 		text-transform: none;
+		margin: 0 0 0 2.5rem;
 	}
 	&.obj_mod {
 		color: $black;
@@ -146,7 +230,6 @@
 
 .place_wrap {
 	width: 57.6rem;
-	box-shadow: 0 1px 0 0 $gray3;
 }
 
 .place_desc {
@@ -175,6 +258,7 @@
 	width: 100%;
 	padding: 3rem 0;
 	column-count: 3;
+	border-top: 1px solid $gray3;
 }
 
 .place_info_block {
@@ -194,7 +278,7 @@
 .place_menu {
 	width: 4.8rem;
 	align-self:  stretch;
-	box-shadow: 1px 1px 0 0 $gray3;
+	border-right: 1px solid $gray3;
 
 	.place_m_item {
 		position: relative;
@@ -289,21 +373,8 @@
 	margin: 1.5rem 0;
 
 	.obj_item {
-		position: relative;
+		@extend %dotted_item;
 		padding: 0.5rem 0 0.5rem 2rem;
-
-		&:before {
-			position: absolute;
-			top: 50%;
-			left: 0;
-			display: block;
-			height: 4px;
-			width: 4px;
-			content: '';
-			transform: translateY(-50%);
-			background: $color_link_base;
-			border-radius: 50%;
-		}
 	}
 
 	.obj_link {
@@ -317,6 +388,7 @@
 }
 
 .post {
+	position: relative;
 	padding: 3rem 7rem 3rem 5rem;
 
 	&.recent_mod {
@@ -338,6 +410,10 @@
 			top: -0.2rem;
 			color: lighten($gray2, 10%);
 		}
+
+		.post_d_month {
+			padding: 0 0.5rem 0 0;
+		}
 	}
 
 	.post_title {
@@ -351,6 +427,23 @@
 		@extend %global_flex_block_row_wrap_flex-start;
 	}
 
+	.post_stats {
+
+		.post_link {
+			position: relative;
+			color: $white;
+			padding: 0 0 0 2.5rem;
+
+			&:hover, &:active {
+				text-decoration: none;
+			}
+
+			+ .post_link {
+				margin: 0 0 0 0.5rem;
+			}
+		}
+	}
+
 	.post_author {
 		margin: 1.5rem 0 0 0;
 		padding: 0 0 1rem 0;
@@ -360,10 +453,8 @@
 		.author_i_wrap {
 			width: 6rem;
 			height: 6rem;
-			border-radius: 50%;
 			background: $white;
-			overflow: hidden;
-			text-align: center;
+			@extend %round_image;
 		}
 
 		.author_name {
@@ -372,6 +463,29 @@
 			font-size: 1.4rem;
 			align-self: stretch;
 			@extend %global_flex_block_column_nowrap_center;
+
+			.nickname {
+				color: $white;
+				font-weight: normal;
+				font-size: 1.6rem;
+			}
+
+			&.twitt_mod {
+				font-size: 2rem;
+			}
+		}
+
+		&.twitt_mod {
+			margin: 0;
+			border: none;
+			overflow: hidden;
+		}
+	}
+
+	.post_text {
+		&.twitt_mod {
+			font-style: italic;
+			margin: 0 0 0 7.5rem;
 		}
 	}
 
@@ -382,23 +496,29 @@
 	.post_stats {
 		margin: 3rem 0 0 0;
 	}
+
+	&.twitt_mod {
+		padding: 3rem 4rem 3rem 3rem;
+		overflow: hidden;
+	}
 }
 
 .tags_list {
 	@extend %global_flex_block_row_wrap_flex-start;
-}
 
-.tags_item {
-	margin: 0 0.5rem 0 0;
+	.tags_item {
+		margin: 0 0.5rem 0 0;
 
-	&:not(:last-of-type):after {
-		content: ',';
+		&:not(:last-of-type):after {
+			content: ',';
+		}
+	}
+
+	.tags_link {
+		color: $white;
 	}
 }
 
-.tags_link {
-	color: $white;
-}
 
 .preview_image {
 	position: relative;
@@ -455,5 +575,30 @@
 				font-size: 1.7rem;
 			}
 		}
+	}
+}
+
+.get_list {
+	padding: 2.5rem 4.8rem 4.8rem 2.5rem;
+
+	.get_item {
+		&:not(:last-of-type) {
+			border-bottom: 1px solid $gray3;
+		}
+	}
+
+	.get_link {
+		display: inline-block;
+		color: $black;
+		position: relative;
+		padding: 0.6rem 0 1rem 3rem;
+	}
+}
+
+.sidebar_list {
+	padding: 2rem 4.8rem 4.8rem;
+
+	.sidebar_item {
+		@extend %dotted_item;
 	}
 }

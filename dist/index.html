@@ -84,26 +84,38 @@
         <div class="header_bottom">
           <div class="breadcrumbs">
             <p class="breadcrumbs_text">Вы сейчас здесь:</p>
+            <ul class="breadcrumbs_list">
+              <li class="breadcrumbs_item"><a href="#" class="breadcrumbs_link">Главная</a>
+              </li>
+              <li class="breadcrumbs_item"><a class="breadcrumbs_link current_mod">Европа</a>
+              </li>
+            </ul>
           </div>
-          <form id="form_search" class="form_search">
-            <dl class="form_cell form_cell_v1_mod">
-              <dt class="form_cell_title form_v1_mod">
-                <label for="place"></label>
-              </dt>
-              <dd class="form_field_wrap form_v1_mod">
-                <input type="text" id="place" placeholder="Страна, город, место, а может идея?" class="form_field default_mod "/>
-              </dd>
-            </dl>
-            <dl class="form_cell form_cell_v1_mod">
-              <dt class="form_cell_title form_v1_mod">
-                <label for="action">Я хочу</label>
-              </dt>
-              <dd class="form_field_wrap form_v1_mod">
-                <input type="text" id="action" placeholder="валяться на пляже и наблюдать за стройными австралийками" class="form_field default_mod "/>
-              </dd>
-            </dl>
-            <button type="submit" form="form_search" class="search_btn">Да!</button><a href="#" class="search_btn more_mod">Еще</a>
-          </form>
+          <div class="search_wrap">
+            <svg class="icon icon-star search_mod">
+              <use xlink:href="i/sprite/sprite.svg#star"></use>
+            </svg>
+            <form id="form_search" class="form_search">
+              <dl class="form_cell form_cell_v2_mod">
+                <dt class="form_cell_title form_v2_mod">
+                  <label for="place"></label>
+                </dt>
+                <dd class="form_field_wrap form_v2_mod">
+                  <input type="text" id="place" placeholder="Страна, город, место, а может идея?" class="form_field v2_mod "/>
+                </dd>
+              </dl>
+              <dl class="form_cell form_cell_v3_mod">
+                <dt class="form_cell_title form_v3_mod">
+                  <label for="action">Я хочу</label>
+                </dt>
+                <dd class="form_field_wrap form_v3_mod">
+                  <input type="text" id="action" placeholder="валяться на пляже и наблюдать за стройными австралийками" class="form_field v3_mod "/>
+                  <div class="search_i_wrap"><img src="i/search_img.jpg" class="search_i"/></div>
+                </dd>
+              </dl>
+              <button type="submit" form="form_search" class="search_btn">Да!</button><a href="#" class="search_btn more_mod">Еще</a>
+            </form>
+          </div>
         </div>
       </div>
     </header>
@@ -261,7 +273,13 @@
                   <div class="post_desc">
                     <p>Непридуманные истории настоящих путешественников, кадры, не требующие пояснений, места, которые необходимо посетить...</p>
                   </div>
-                  <div class="post_stats"><a href="#" class="post_link like_mod">27</a><a href="#" class="post_link view_mod">27</a><a href="#" class="more_btn recent_mod">Читать далее</a></div>
+                  <div class="post_stats"><a href="#" class="post_link">27
+                      <svg class="icon icon-like stat_mod">
+                        <use xlink:href="i/sprite/sprite.svg#like"></use>
+                      </svg></a><a href="#" class="post_link">75
+                      <svg class="icon icon-eye stat_mod">
+                        <use xlink:href="i/sprite/sprite.svg#eye"></use>
+                      </svg></a><a href="#" class="more_btn recent_mod">Читать далее</a></div>
                 </article>
                 <article class="post recent_mod">
                   <div class="post_date">
@@ -284,7 +302,13 @@
                   <div class="post_desc">
                     <p>Непридуманные истории настоящих путешественников, кадры, не требующие пояснений, места, которые необходимо посетить...</p>
                   </div>
-                  <div class="post_stats"><a href="#" class="post_link like_mod">27</a><a href="#" class="post_link view_mod">27</a><a href="#" class="more_btn recent_mod">Читать далее</a></div>
+                  <div class="post_stats"><a href="#" class="post_link">27
+                      <svg class="icon icon-like stat_mod">
+                        <use xlink:href="i/sprite/sprite.svg#like"></use>
+                      </svg></a><a href="#" class="post_link">75
+                      <svg class="icon icon-eye stat_mod">
+                        <use xlink:href="i/sprite/sprite.svg#eye"></use>
+                      </svg></a><a href="#" class="more_btn recent_mod">Читать далее</a></div>
                 </article>
                 <article class="post recent_mod">
                   <div class="post_date">
@@ -307,7 +331,13 @@
                   <div class="post_desc">
                     <p>Непридуманные истории настоящих путешественников, кадры, не требующие пояснений, места, которые необходимо посетить...</p>
                   </div>
-                  <div class="post_stats"><a href="#" class="post_link like_mod">27</a><a href="#" class="post_link view_mod">27</a><a href="#" class="more_btn recent_mod">Читать далее</a></div>
+                  <div class="post_stats"><a href="#" class="post_link">27
+                      <svg class="icon icon-like stat_mod">
+                        <use xlink:href="i/sprite/sprite.svg#like"></use>
+                      </svg></a><a href="#" class="post_link">75
+                      <svg class="icon icon-eye stat_mod">
+                        <use xlink:href="i/sprite/sprite.svg#eye"></use>
+                      </svg></a><a href="#" class="more_btn recent_mod">Читать далее</a></div>
                 </article>
                 <article class="post recent_mod">
                   <div class="post_date">
@@ -330,7 +360,13 @@
                   <div class="post_desc">
                     <p>Непридуманные истории настоящих путешественников, кадры, не требующие пояснений, места, которые необходимо посетить...</p>
                   </div>
-                  <div class="post_stats"><a href="#" class="post_link like_mod">27</a><a href="#" class="post_link view_mod">27</a><a href="#" class="more_btn recent_mod">Читать далее</a></div>
+                  <div class="post_stats"><a href="#" class="post_link">27
+                      <svg class="icon icon-like stat_mod">
+                        <use xlink:href="i/sprite/sprite.svg#like"></use>
+                      </svg></a><a href="#" class="post_link">75
+                      <svg class="icon icon-eye stat_mod">
+                        <use xlink:href="i/sprite/sprite.svg#eye"></use>
+                      </svg></a><a href="#" class="more_btn recent_mod">Читать далее</a></div>
                 </article>
                 <article class="post recent_mod">
                   <div class="post_date">
@@ -353,7 +389,13 @@
                   <div class="post_desc">
                     <p>Непридуманные истории настоящих путешественников, кадры, не требующие пояснений, места, которые необходимо посетить...</p>
                   </div>
-                  <div class="post_stats"><a href="#" class="post_link like_mod">27</a><a href="#" class="post_link view_mod">27</a><a href="#" class="more_btn recent_mod">Читать далее</a></div>
+                  <div class="post_stats"><a href="#" class="post_link">27
+                      <svg class="icon icon-like stat_mod">
+                        <use xlink:href="i/sprite/sprite.svg#like"></use>
+                      </svg></a><a href="#" class="post_link">75
+                      <svg class="icon icon-eye stat_mod">
+                        <use xlink:href="i/sprite/sprite.svg#eye"></use>
+                      </svg></a><a href="#" class="more_btn recent_mod">Читать далее</a></div>
                 </article>
                 <article class="post recent_mod">
                   <div class="post_date">
@@ -376,7 +418,13 @@
                   <div class="post_desc">
                     <p>Непридуманные истории настоящих путешественников, кадры, не требующие пояснений, места, которые необходимо посетить...</p>
                   </div>
-                  <div class="post_stats"><a href="#" class="post_link like_mod">27</a><a href="#" class="post_link view_mod">27</a><a href="#" class="more_btn recent_mod">Читать далее</a></div>
+                  <div class="post_stats"><a href="#" class="post_link">27
+                      <svg class="icon icon-like stat_mod">
+                        <use xlink:href="i/sprite/sprite.svg#like"></use>
+                      </svg></a><a href="#" class="post_link">75
+                      <svg class="icon icon-eye stat_mod">
+                        <use xlink:href="i/sprite/sprite.svg#eye"></use>
+                      </svg></a><a href="#" class="more_btn recent_mod">Читать далее</a></div>
                 </article>
                 <article class="post recent_mod">
                   <div class="post_date">
@@ -399,7 +447,13 @@
                   <div class="post_desc">
                     <p>Непридуманные истории настоящих путешественников, кадры, не требующие пояснений, места, которые необходимо посетить...</p>
                   </div>
-                  <div class="post_stats"><a href="#" class="post_link like_mod">27</a><a href="#" class="post_link view_mod">27</a><a href="#" class="more_btn recent_mod">Читать далее</a></div>
+                  <div class="post_stats"><a href="#" class="post_link">27
+                      <svg class="icon icon-like stat_mod">
+                        <use xlink:href="i/sprite/sprite.svg#like"></use>
+                      </svg></a><a href="#" class="post_link">75
+                      <svg class="icon icon-eye stat_mod">
+                        <use xlink:href="i/sprite/sprite.svg#eye"></use>
+                      </svg></a><a href="#" class="more_btn recent_mod">Читать далее</a></div>
                 </article>
                 <article class="post recent_mod">
                   <div class="post_date">
@@ -422,7 +476,13 @@
                   <div class="post_desc">
                     <p>Непридуманные истории настоящих путешественников, кадры, не требующие пояснений, места, которые необходимо посетить...</p>
                   </div>
-                  <div class="post_stats"><a href="#" class="post_link like_mod">27</a><a href="#" class="post_link view_mod">27</a><a href="#" class="more_btn recent_mod">Читать далее</a></div>
+                  <div class="post_stats"><a href="#" class="post_link">27
+                      <svg class="icon icon-like stat_mod">
+                        <use xlink:href="i/sprite/sprite.svg#like"></use>
+                      </svg></a><a href="#" class="post_link">75
+                      <svg class="icon icon-eye stat_mod">
+                        <use xlink:href="i/sprite/sprite.svg#eye"></use>
+                      </svg></a><a href="#" class="more_btn recent_mod">Читать далее</a></div>
                 </article>
               </div>
             </section>
@@ -432,22 +492,52 @@
               <div class="map">map place here</div>
             </div>
             <div class="sidebar_section">
-              <h3 class="title weather_mod">Погода в Берлине</h3>
+              <h3 class="title sidebar_mod">Погода в Берлине
+                <svg class="icon icon-thermometer sidebar_mod">
+                  <use xlink:href="i/sprite/sprite.svg#thermometer"></use>
+                </svg>
+              </h3>
               <div class="widget">widget place here</div>
             </div>
             <div class="sidebar_section">
-              <h3 class="title air_mod">Аэропорты</h3>
+              <h3 class="title sidebar_mod">Аэропорты
+                <svg class="icon icon-aircraft sidebar_mod">
+                  <use xlink:href="i/sprite/sprite.svg#aircraft"></use>
+                </svg>
+              </h3>
               <div class="widget">widget place here</div>
             </div>
             <div class="sidebar_section">
-              <h3 class="title get_mod">Как добраться</h3>
+              <h3 class="title sidebar_mod">Как добраться
+                <svg class="icon icon-compass sidebar_mod">
+                  <use xlink:href="i/sprite/sprite.svg#compass"></use>
+                </svg>
+              </h3>
               <ul class="get_list">
-                <li class="get_item"><a href="#" class="get_link air_mod">Из Москвы</a></li>
-                <li class="get_item"><a href="#" class="get_link train_mod">Москва-Рим</a></li>
-                <li class="get_item"><a href="#" class="get_link train_mod">Экспресс Leonardo Express до вокзала Termini</a></li>
-                <li class="get_item"><a href="#" class="get_link train_mod">Скоростной поезд Frecciarossa до вокзала Неаполь</a></li>
-                <li class="get_item"><a href="#" class="get_link bus_mod">Наземный транспорт</a></li>
-                <li class="get_item"><a href="#" class="get_link ship_mod">Паром до о. Искья</a></li>
+                <li class="get_item"><a href="#" class="get_link">Из Москвы
+                    <svg class="icon icon-aircraft get_mod">
+                      <use xlink:href="i/sprite/sprite.svg#aircraft"></use>
+                    </svg></a></li>
+                <li class="get_item"><a href="#" class="get_link">Москва-Рим
+                    <svg class="icon icon-aircraft get_mod">
+                      <use xlink:href="i/sprite/sprite.svg#aircraft"></use>
+                    </svg></a></li>
+                <li class="get_item"><a href="#" class="get_link">Экспресс Leonardo Express до вокзала Termini
+                    <svg class="icon icon-aircraft get_mod">
+                      <use xlink:href="i/sprite/sprite.svg#aircraft"></use>
+                    </svg></a></li>
+                <li class="get_item"><a href="#" class="get_link">Скоростной поезд Frecciarossa до вокзала Неаполь
+                    <svg class="icon icon-aircraft get_mod">
+                      <use xlink:href="i/sprite/sprite.svg#aircraft"></use>
+                    </svg></a></li>
+                <li class="get_item"><a href="#" class="get_link">Наземный транспорт
+                    <svg class="icon icon-aircraft get_mod">
+                      <use xlink:href="i/sprite/sprite.svg#aircraft"></use>
+                    </svg></a></li>
+                <li class="get_item"><a href="#" class="get_link">Паром до о. Искья
+                    <svg class="icon icon-aircraft get_mod">
+                      <use xlink:href="i/sprite/sprite.svg#aircraft"></use>
+                    </svg></a></li>
               </ul>
             </div>
           </aside>
@@ -666,33 +756,43 @@
           </div>
           <aside class="sidebar">
             <div class="sidebar_section">
-              <h3 class="title gift_mod">Что привезти?</h3>
-              <ul class="gifts_list">
-                <li class="gifts_item"><a href="#" class="gifts_link">Сувенир 1</a></li>
-                <li class="gifts_item"><a href="#" class="gifts_link">Сувенир 2</a></li>
-                <li class="gifts_item"><a href="#" class="gifts_link">Сувенир 3</a></li>
+              <h3 class="title sidebar_mod">Что привезти?
+                <svg class="icon icon-gift sidebar_mod">
+                  <use xlink:href="i/sprite/sprite.svg#gift"></use>
+                </svg>
+              </h3>
+              <ul class="sidebar_list">
+                <li class="sidebar_item"><a href="#" class="sidebar_link">Сувенир 1</a></li>
+                <li class="sidebar_item"><a href="#" class="sidebar_link">Сувенир 2</a></li>
+                <li class="sidebar_item"><a href="#" class="sidebar_link">Сувенир 3</a></li>
               </ul>
             </div>
             <div class="sidebar_section">
-              <h3 class="title todo_mod">Список дел</h3>
-              <ul class="todo_list">
-                <li class="todo_item"><a href="#" class="todo_link">Посетить Кельнский собор</a></li>
-                <li class="todo_item"><a href="#" class="todo_link">Покататься Чертовом колесе</a></li>
-                <li class="todo_item"><a href="#" class="todo_link">Посетить Бранденбургские ворота</a></li>
+              <h3 class="title sidebar_mod">Список дел
+                <svg class="icon icon-clipboard sidebar_mod">
+                  <use xlink:href="i/sprite/sprite.svg#clipboard"></use>
+                </svg>
+              </h3>
+              <ul class="sidebar_list">
+                <li class="sidebar_item"><a href="#" class="sidebar_link">Посетить Кельнский собор</a></li>
+                <li class="sidebar_item"><a href="#" class="sidebar_link">Покататься Чертовом колесе</a></li>
+                <li class="sidebar_item"><a href="#" class="sidebar_link">Посетить Бранденбургские ворота</a></li>
               </ul>
             </div>
-            <div class="sidebar_section">
-              <h3 class="title todo_mod">Последние твиты</h3>
-              <article class="post">
-                <div class="post_author">
-                  <figure class="author_avatar"><img src="i/avatar.jpg" class="img">
-                    <figcaption class="author_name twitt_mod"><span class="firstname">Иван</span><span class="lastname">Иванов</span><a href="#" class="nickname">@vani_vi</a></figcaption>
-                  </figure>
+            <div class="sidebar_section dark_mod">
+              <h3 class="title sidebar_mod dark_mod">Последние твиты
+                <svg class="icon icon-tw sidebar_mod">
+                  <use xlink:href="i/sprite/sprite.svg#tw"></use>
+                </svg>
+              </h3>
+              <article class="post twitt_mod">
+                <div class="post_author twitt_mod">
+                  <div class="author_i_wrap"><img src="i/avatar.jpg"></div><span class="author_name twitt_mod">Иван Иванов<a href="#" class="nickname">@vani_vi</a></span>
                 </div>
-                <div class="post_text">
+                <div class="post_text twitt_mod">
                   <p>Непридуманные истории настоящих путешественников, кадры, не требующие пояснений,	места, которые необходимо посетить, маршруты.</p>
                 </div>
-              </article><a href="#" class="twitter_subscribe">Подписаться</a>
+              </article><a href="#" class="subscribe_btn twitt_mod">Подписаться</a>
             </div>
           </aside>
           <section class="section stories_mod">
