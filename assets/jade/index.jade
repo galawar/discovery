@@ -89,8 +89,10 @@ block content_block
 							.post_desc
 								p Непридуманные истории настоящих путешественников, кадры, не требующие пояснений, места, которые необходимо посетить...
 							.post_stats
-								a.post_link.like_mod(href='#') 27
-								a.post_link.view_mod(href='#') 27
+								a.post_link(href='#') 27
+									+icon('like', 'stat_mod')
+								a.post_link(href='#') 75
+									+icon('eye', 'stat_mod')
 								a.more_btn.recent_mod(href='#') Читать далее
 			//------------------------------------------------ ##recent
 
@@ -98,26 +100,35 @@ block content_block
 			.sidebar_section
 				.map map place here
 			.sidebar_section
-				h3.title.weather_mod Погода в Берлине
+				h3.title.sidebar_mod Погода в Берлине
+					+icon('thermometer', 'sidebar_mod')
 				.widget widget place here
 			.sidebar_section
-				h3.title.air_mod Аэропорты
+				h3.title.sidebar_mod Аэропорты
+					+icon('aircraft', 'sidebar_mod')
 				.widget widget place here
 			.sidebar_section
-				h3.title.get_mod Как добраться
+				h3.title.sidebar_mod Как добраться
+					+icon('compass', 'sidebar_mod')
 				ul.get_list
 					li.get_item
-						a.get_link.air_mod(href='#') Из Москвы
+						a.get_link(href='#') Из Москвы
+							+icon('aircraft', 'get_mod')
 					li.get_item
-						a.get_link.train_mod(href='#') Москва-Рим
+						a.get_link(href='#') Москва-Рим
+							+icon('aircraft', 'get_mod')
 					li.get_item
-						a.get_link.train_mod(href='#') Экспресс Leonardo Express до вокзала Termini
+						a.get_link(href='#') Экспресс Leonardo Express до вокзала Termini
+							+icon('aircraft', 'get_mod')
 					li.get_item
-						a.get_link.train_mod(href='#') Скоростной поезд Frecciarossa до вокзала Неаполь
+						a.get_link(href='#') Скоростной поезд Frecciarossa до вокзала Неаполь
+							+icon('aircraft', 'get_mod')
 					li.get_item
-						a.get_link.bus_mod(href='#') Наземный транспорт
+						a.get_link(href='#') Наземный транспорт
+							+icon('aircraft', 'get_mod')
 					li.get_item
-						a.get_link.ship_mod(href='#') Паром до о. Искья
+						a.get_link(href='#') Паром до о. Искья
+							+icon('aircraft', 'get_mod')
 		//------------------------------------------------ ##sidebar
 
 		section.section
@@ -170,24 +181,25 @@ block content_block
 
 		aside.sidebar
 			.sidebar_section
-				h3.title.gift_mod Что привезти?
-				+link_list(['Сувенир 1', 'Сувенир 2', 'Сувенир 3'], 'gifts')
+				h3.title.sidebar_mod Что привезти?
+					+icon('gift', 'sidebar_mod')
+				+link_list(['Сувенир 1', 'Сувенир 2', 'Сувенир 3'], 'sidebar')
 			.sidebar_section
-				h3.title.todo_mod Список дел
-				+link_list(['Посетить Кельнский собор', 'Покататься Чертовом колесе', 'Посетить Бранденбургские ворота'], 'todo')
-			.sidebar_section
-				h3.title.todo_mod Последние твиты
-				article.post
-					.post_author
-						figure.author_avatar
-							img.img(src='i/avatar.jpg')
-							figcaption.author_name.twitt_mod
-								span.firstname Иван
-								span.lastname Иванов
-								a.nickname(href='#') @vani_vi
-					.post_text
+				h3.title.sidebar_mod Список дел
+					+icon('clipboard', 'sidebar_mod')
+				+link_list(['Посетить Кельнский собор', 'Покататься Чертовом колесе', 'Посетить Бранденбургские ворота'], 'sidebar')
+			.sidebar_section.dark_mod
+				h3.title.sidebar_mod.dark_mod Последние твиты
+					+icon('tw', 'sidebar_mod')
+				article.post.twitt_mod
+					.post_author.twitt_mod
+						.author_i_wrap
+							img(src='i/avatar.jpg')
+						span.author_name.twitt_mod Иван Иванов
+							a.nickname(href='#') @vani_vi
+					.post_text.twitt_mod
 						p Непридуманные истории настоящих путешественников, кадры, не требующие пояснений,	места, которые необходимо посетить, маршруты.
-				a.twitter_subscribe(href='#') Подписаться
+				a.subscribe_btn.twitt_mod(href='#') Подписаться
 		//------------------------------------------------ ##sidebar
 
 		section.section.stories_mod

@@ -27,25 +27,31 @@ mixin header
 			.header_bottom
 				.breadcrumbs
 					p.breadcrumbs_text Вы сейчас здесь:
-					//-+breadcrumbs()
+					+breadcrumbs(['Главная', 'Европа'])
 
-				form.form_search#form_search
-					+form_element({
-						type: 'text',
-						class_array: default_field,
-						title: '',
-						id: 'place',
-						placeholder: 'Страна, город, место, а может идея?'
-					})
-					+form_element({
-						type: 'text',
-						class_array: default_field,
-						title: 'Я хочу',
-						id: 'action',
-						placeholder: 'валяться на пляже и наблюдать за стройными австралийками'
-					})
-					button.search_btn(type='submit' form='form_search') Да!
-					a.search_btn.more_mod(href='#') Еще
+				.search_wrap
+					+icon('star', 'search_mod')
+
+					form.form_search#form_search
+						+form_element({
+							type: 'text',
+							class_array: v2_field,
+							title: '',
+							id: 'place',
+							placeholder: 'Страна, город, место, а может идея?'
+						})
+
+						+form_element({
+							type: 'text',
+							class_array: v3_field,
+							title: 'Я хочу',
+							id: 'action',
+							placeholder: 'валяться на пляже и наблюдать за стройными австралийками'
+						})
+							.search_i_wrap
+								img.search_i(src='i/search_img.jpg')
+						button.search_btn(type='submit' form='form_search') Да!
+						a.search_btn.more_mod(href='#') Еще
 
 
 mixin footer
