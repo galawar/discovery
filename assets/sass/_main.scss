@@ -65,10 +65,17 @@
 		border-bottom: 1px solid $gray3;
 		background: $white;
 	}
+	&.recent_mod {
+		border-bottom: 1px solid $gray2;
+	}
 	&.dark_mod {
 		color: $white;
-		background: $gray1;
+		background: transparent;
 		border-color: rgba($gray3, 0.2);
+	}
+	&.bordered_mod {
+		border-top: 1px solid $gray3;
+		border-bottom: 1px solid $gray3;
 	}
 }
 
@@ -93,9 +100,15 @@
 		color: $white;
 		background: $gray1;
 	}
+
+	&.air_mod {
+		background-image: url(../i/air-bg.png);
+		background-repeat: no-repeat;
+		background-position: 0 -9rem;
+	}
 }
 
-.map {
+.widget {
 	height: 43rem;
 }
 
@@ -382,9 +395,44 @@
 	}
 }
 
-.recent_wrap {
+.recent_slider_wrap {
+	position: relative;
+
+	.bx-prev, .bx-next {
+		position: absolute;
+		top: 50%;
+		transform: translate(0, -50%);
+		&:before {
+			display: block;
+			content: '';
+			width: 5rem;
+			height: 5rem;
+			border-width: 1px;
+			border-style: solid;
+			border-color: transparent $gray3 $gray3 transparent;
+		}
+	}
+	.bx-prev {
+		left: 1.5rem;
+		&:before {
+			transform: rotate(135deg);
+		}
+	}
+	.bx-next {
+		right: 1.5rem;
+		&:before {
+			transform: rotate(-45deg);
+		}
+	}
+}
+
+.recent_list {
 	margin: 0 4.8rem;
-	@extend %global_flex_block_row_wrap_flex-start;
+
+	.recent_item {
+		@extend %global_flex_block_row_wrap_flex-start;
+		border-left: 1px solid $gray2;
+	}
 }
 
 .post {
@@ -392,9 +440,9 @@
 	padding: 3rem 7rem 3rem 5rem;
 
 	&.recent_mod {
-		width: 50%;
+		width: 26rem;
 		padding: 2rem;
-		box-shadow: inset 0 0 0 1px $gray2;
+		box-shadow: 1px -1px 0 0 $gray2, 1px 0 0 0 $gray2;
 	}
 
 	.post_date {
@@ -422,7 +470,7 @@
 	}
 
 	.post_tags {
-		margin: 1.5rem 0 0 0;
+		margin: 0.5rem 0 0 0;
 		font-style: italic;
 		@extend %global_flex_block_row_wrap_flex-start;
 	}

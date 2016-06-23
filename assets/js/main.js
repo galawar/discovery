@@ -16,6 +16,13 @@ $(document).ready(function ($) {
 	getAllClasses('html','.elements_list');
 
 	svg4everybody({});
+
+	$('.recent_list').bxSlider({
+		slideWidth: 620,
+		pager: false,
+		prevText: '',
+		nextText: '',
+	});
 });
 
 $(window).on('load', function () {
