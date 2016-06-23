@@ -62,49 +62,52 @@ block content_block
 			//------------------------------------------------ ##content
 
 			section.section.dark_mod
-				h2.title: <strong>Последнее</strong> добавленное (всего 32)
-				.recent_wrap
-					+loop_while(8)
-						article.post.recent_mod
-							.post_date
-								+icon('calendar-o', 'recent_mod')
-								span.post_d_day 28
-								span.post_d_month Ноября
-								span.post_d_year 2014
-							h2.post_title Красота Алтая в сентябре
-							.post_tags Место: &nbsp;
-								ul.tags_list
-									li.tags_item
-										a.tags_link(href='#') Россия
-									li.tags_item
-										a.tags_link(href='#') Алтай
-									li.tags_item
-										a.tags_link(href='#') Белокуриха
-							.post_author
-								.author_i_wrap
-									img(src='i/avatar.jpg')
-								.author_name
-									span.firstname Иннокентий
-									span.lastname Смактуновский
-							.post_desc
-								p Непридуманные истории настоящих путешественников, кадры, не требующие пояснений, места, которые необходимо посетить...
-							.post_stats
-								a.post_link(href='#') 27
-									+icon('like', 'stat_mod')
-								a.post_link(href='#') 75
-									+icon('eye', 'stat_mod')
-								a.more_btn.recent_mod(href='#') Читать далее
+				h2.title.recent_mod: <strong>Последнее</strong> добавленное (всего 32)
+				.recent_slider_wrap
+					ul.recent_list
+						+loop_while(4)
+							li.recent_item
+								+loop_while(4)
+									article.post.recent_mod
+										.post_date
+											+icon('calendar-o', 'recent_mod')
+											span.post_d_day 28
+											span.post_d_month Ноября
+											span.post_d_year 2014
+										h2.post_title Красота Алтая в сентябре
+										.post_tags Место: &nbsp;
+											ul.tags_list
+												li.tags_item
+													a.tags_link(href='#') Россия
+												li.tags_item
+													a.tags_link(href='#') Алтай
+												li.tags_item
+													a.tags_link(href='#') Белокуриха
+										.post_author
+											.author_i_wrap
+												img(src='i/avatar.jpg')
+											.author_name
+												span.firstname Иннокентий
+												span.lastname Смактуновский
+										.post_desc
+											p Непридуманные истории настоящих путешественников, кадры, не требующие пояснений, места, которые необходимо посетить...
+										.post_stats
+											a.post_link(href='#') 27
+												+icon('like', 'stat_mod')
+											a.post_link(href='#') 75
+												+icon('eye', 'stat_mod')
+											a.more_btn.recent_mod(href='#') Читать далее
 			//------------------------------------------------ ##recent
 
 		aside.sidebar
 			.sidebar_section
-				.map map place here
+				.widget map place here
 			.sidebar_section
 				h3.title.sidebar_mod Погода в Берлине
 					+icon('thermometer', 'sidebar_mod')
 				.widget widget place here
-			.sidebar_section
-				h3.title.sidebar_mod Аэропорты
+			.sidebar_section.dark_mod.air_mod
+				h3.title.sidebar_mod.dark_mod Аэропорты
 					+icon('aircraft', 'sidebar_mod')
 				.widget widget place here
 			.sidebar_section
@@ -132,7 +135,7 @@ block content_block
 		//------------------------------------------------ ##sidebar
 
 		section.section
-			h2.title Стоит посетить
+			h2.title.bordered_mod Стоит посетить
 			.objects
 				+loop_while(5)
 					.obj_wrap
