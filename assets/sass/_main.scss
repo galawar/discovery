@@ -1,6 +1,7 @@
 .section {
 	@extend %global_flex_block_row_wrap_flex-start;
 	&.preview_mod {
+		flex: 1;
 		color: $white;
 		background: $yellow;
 		padding: 2rem;
@@ -109,7 +110,7 @@
 }
 
 .widget {
-	height: 43rem;
+	//height: 43rem;
 }
 
 .icon {
@@ -145,6 +146,20 @@
 		left: 0.5rem;
 		transform: translate(0, -50%);
 		font-size: 1.4rem;
+	}
+	&.story_mod {
+		position: absolute;
+		top: 50%;
+		left: 2.8rem;
+		transform: translate(0, -50%);
+		font-size: 1.4rem;
+	}
+	&.preview_mod {
+		position: absolute;
+		top: 3rem;
+		left: 50%;
+		transform: translate(-50%, 0);
+		font-size: 2rem;
 	}
 }
 
@@ -215,6 +230,7 @@
 }
 
 .more_btn {
+	position: relative;
 	text-transform: uppercase;
 	&:hover {
 		text-decoration: none;
@@ -238,6 +254,21 @@
 		@extend %o-btn_1;
 		@extend %btn_size_5;
 		text-transform: none;
+	}
+	&.preview_mod {
+		color: $black;
+		padding: 5rem 3.5rem 0 3.5rem;;
+		font-weight: 700;
+		font-size: 1.6rem;
+		@extend %btn_size_7;
+	}
+	&.story_mod {
+		margin: 3rem 0 0 0;
+		color: $white;
+		font-weight: normal;
+		letter-spacing: 2px;
+		@extend %blue_btn_1;
+		@extend %btn_size_8;
 	}
 }
 
@@ -444,6 +475,15 @@
 		padding: 2rem;
 		box-shadow: 1px -1px 0 0 $gray2, 1px 0 0 0 $gray2;
 	}
+	&.story_mod {
+		@extend %global_flex_block_row_nowrap_flex-start;
+
+		&:nth-of-type(even) {
+			background: $gray4;
+			border-top: 1px solid $gray3;
+			border-bottom: 1px solid $gray3;
+		}
+	}
 
 	.post_date {
 		position: relative;
@@ -467,6 +507,10 @@
 	.post_title {
 		margin: 1.5rem 0 0 0;
 		text-transform: uppercase;
+		&.story_mod {
+			font-size: 1.6rem;
+			text-transform: none;
+		}
 	}
 
 	.post_tags {
@@ -489,6 +533,11 @@
 			+ .post_link {
 				margin: 0 0 0 0.5rem;
 			}
+
+			&.story_mod {
+				color: inherit;
+				padding: 0 0 0 5rem;
+			}
 		}
 	}
 
@@ -503,6 +552,16 @@
 			height: 6rem;
 			background: $white;
 			@extend %round_image;
+
+			&.story_mod {
+				width: 8rem;
+				height: 8rem;
+				.img {
+					width: auto;
+					height: 100%;
+					margin: auto;
+				}
+			}
 		}
 
 		.author_name {
@@ -528,6 +587,13 @@
 			border: none;
 			overflow: hidden;
 		}
+		&.story_mod {
+			order: -1;
+			flex-flow: row wrap;
+			flex: 1 0 24rem;
+			border: none;
+			margin-top: 2rem;
+		}
 	}
 
 	.post_text {
@@ -535,15 +601,23 @@
 			font-style: italic;
 			margin: 0 0 0 7.5rem;
 		}
+		&.story_mod {
+			margin: 1rem 0 2rem 0;
+		}
 	}
 
 	.post_desc {
 		margin: 1rem 0 0 0;
+		&.story_mod {
+			flex-direction: column;
+			margin: 0;
+		}
 	}
 
 	.post_stats {
 		margin: 3rem 0 0 0;
 	}
+
 
 	&.twitt_mod {
 		padding: 3rem 4rem 3rem 3rem;
@@ -574,10 +648,6 @@
 	max-height: 35rem;
 	overflow: hidden;
 
-	.img {
-		width: 100%;
-	}
-
 	.preview_caption {
 		position: absolute;
 		top: 0;
@@ -590,6 +660,14 @@
 
 	.preview_desc {
 		font-size: 2.3rem;
+	}
+}
+
+.preview_list {
+	@extend %global_flex_block_row_nowrap_flex-start;
+
+	.preview_item {
+		margin: 0.1rem 0.1rem 0 0;
 	}
 }
 
