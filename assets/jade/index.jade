@@ -101,15 +101,18 @@ block content_block
 
 		aside.sidebar
 			.sidebar_section
-				.widget map place here
+				.widget
+					img.img(src='i/temp/map.jpg')
 			.sidebar_section
 				h3.title.sidebar_mod Погода в Берлине
 					+icon('thermometer', 'sidebar_mod')
-				.widget widget place here
+				.widget
+					img.img(src='i/temp/weather.jpg')
 			.sidebar_section.dark_mod.air_mod
 				h3.title.sidebar_mod.dark_mod Аэропорты
 					+icon('aircraft', 'sidebar_mod')
-				.widget widget place here
+				.widget
+					img.img(src='i/temp/air.png')
 			.sidebar_section
 				h3.title.sidebar_mod Как добраться
 					+icon('compass', 'sidebar_mod')
@@ -165,6 +168,13 @@ block content_block
 						h2.title.preview_mod Острова мира
 						.preview_desc
 							p Выступления юных артистов стали ярким сплетением национальных традиций народов
+				ul.preview_list
+					each item in [1,2,3,4]
+						li.preview_item
+							a.preview_link(href='#')
+								img.img(src='i/prev/preview0#{item}.jpg')= item
+					a.more_btn.preview_mod(href='#') Еще фото
+						+icon('camera', 'preview_mod')
 			//------------------------------------------------ ##preview
 
 			section.section.events_mod
@@ -209,18 +219,22 @@ block content_block
 			h2.title.stories_mod Истории посетителей
 			+loop_while(3)
 				article.post.story_mod
-					h3.post_title Как я встретил Пикассо в самом центре Парижа
-					.post_desc
-						p Непридуманные истории настоящих путешественников, кадры, не требующие пояснений, места, которые необходимо посетить. Непридуманные истории настоящих путешественников, кадры, не требующие пояснений, места, которые необходимо посетить.
-					a.post_link.more_btn.dark_mod(href='#') Читать далее
+					.post_desc.story_mod
+						h3.post_title.story_mod Как я встретил Пикассо в самом центре Парижа
+						.post_text.story_mod
+							p Непридуманные истории настоящих путешественников, кадры, не требующие пояснений, места, которые необходимо посетить. Непридуманные истории настоящих путешественников, кадры, не требующие пояснений, места, которые необходимо посетить.
+						a.more_btn.obj_mod(href='#') Читать далее
 
-					.post_author
-						.author_i_wrap
+					.post_author.story_mod
+						.author_i_wrap.story_mod
 							img.img(src='i/avatar.jpg')
 						.author_name
 							span.firstname Иннокентий
 							span.lastname Смактуновский
 						.post_stats
-							a.post_link.like_mod(href='#') 27
-							a.post_link.view_mod(href='#') 27
+							a.post_link.story_mod(href='#') 27
+								+icon('like', 'story_mod')
+							a.post_link.story_mod(href='#') 27
+								+icon('camera', 'story_mod')
+			a.more_btn.story_mod(href='#') Показать еще (10)
 		//------------------------------------------------ ##stories
